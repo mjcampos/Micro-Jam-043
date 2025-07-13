@@ -13,7 +13,6 @@ public class PlayerColorSelection : ColorGenerator
         _rawImage = GetComponent<RawImage>();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Color = GenerateRandomColor();
@@ -25,6 +24,10 @@ public class PlayerColorSelection : ColorGenerator
     public void UpdatePlayerColor(Color color)
     {
         Color = color;
-        _rawImage.color = Color;
+
+        if (_rawImage)
+        { 
+            _rawImage.color = Color;
+        }
     }
 }
