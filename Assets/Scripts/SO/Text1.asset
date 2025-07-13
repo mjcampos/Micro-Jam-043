@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcab10dacab7f945a41fff52eaf34f6, type: 3}
   m_Name: Text1
   m_EditorClassIdentifier: 
-  text: You're late again!!!
+  Text: You're late!
