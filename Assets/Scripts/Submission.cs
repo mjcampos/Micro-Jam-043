@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
 public class Submission : MonoBehaviour
 {

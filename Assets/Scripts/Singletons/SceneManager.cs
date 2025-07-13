@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace Singletons
 {
     public class SceneManager : MonoBehaviour
     {

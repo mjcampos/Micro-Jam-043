@@ -50,5 +50,10 @@ namespace Singletons
         {
             return averageScore;
         }
+
+        public void ResetEverything()
+        {
+            scores.Clear();
+        }
     }
 }

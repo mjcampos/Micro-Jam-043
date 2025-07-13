@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
+using Singletons;
 using TMPro;
-using UI;
 using UnityEngine;
 
 public class TypewriterEffect : MonoBehaviour

@@ -1,7 +1,7 @@
 using Helpers;
 using Singletons;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
 public class RestartManager : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class RestartManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                ScoreManager.Instance.ResetEverything();
                 SceneManager.LoadScene(BuildIndexes.IntroScene);
             }
         }
