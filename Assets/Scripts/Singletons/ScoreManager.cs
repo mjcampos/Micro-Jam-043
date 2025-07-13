@@ -15,6 +15,13 @@ namespace Singletons
 
         List<float> scores = new List<float>();
         float averageScore;
+        bool canPlay = true;
+
+        public bool CanPlay
+        {
+            get => canPlay;
+            set => canPlay = value;
+        }
         
         void Awake()
         {
@@ -35,7 +42,7 @@ namespace Singletons
 
             if (scores.Count >= maxRounds)
             {
-                Debug.Log("Game Over");
+                canPlay = false;
             }
         }
 

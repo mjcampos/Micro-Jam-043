@@ -13,6 +13,7 @@ public class Submission : MonoBehaviour
     [SerializeField] ColorGenerator playerSelection;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] Button submitButton;
+    [SerializeField] TextMeshProUGUI gameOverText;
     
     CountdownTimer countdownTimer;
     AverageScoreTracker averageScoreTracker;
@@ -21,6 +22,8 @@ public class Submission : MonoBehaviour
     {
         countdownTimer = GetComponent<CountdownTimer>();
         averageScoreTracker = GetComponent<AverageScoreTracker>();
+        
+        gameOverText.text = "";
     }
 
     public void Submit()
@@ -47,6 +50,16 @@ public class Submission : MonoBehaviour
         submitButton.interactable = false;
         
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (ScoreManager.Instance.CanPlay)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            int averageScore = (int)ScoreManager.Instance.GetAverageScore();
+            
+            gameOverText.text = $"You scored an average of: {averageScore}%\nPress r to restart";
+        }
     }
 }
