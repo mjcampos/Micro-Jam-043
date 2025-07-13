@@ -20,8 +20,15 @@ public class TypewriterEffect : MonoBehaviour
 
     void Start()
     {
-        SceneManager.Instance.CanChangeScene = false;
+        StartCoroutine(PauseBeforeCanChangeScene());
         StartCoroutine(PlayDialogue());
+    }
+
+    IEnumerator PauseBeforeCanChangeScene()
+    {
+        SceneManager.Instance.CanChangeScene = false;
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.Instance.CanChangeScene = true;
     }
 
     IEnumerator  PlayDialogue()
@@ -35,8 +42,6 @@ public class TypewriterEffect : MonoBehaviour
             yield return StartCoroutine(TypeLine(text));
             yield return new WaitForSeconds(delayBetweenLines);
         }
-        
-        SceneManager.Instance.CanChangeScene = true;
     }
 
     IEnumerator TypeLine(string text)
