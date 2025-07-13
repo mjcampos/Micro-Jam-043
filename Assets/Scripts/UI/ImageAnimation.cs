@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManagerAnimation : MonoBehaviour
+public class ImageAnimation : MonoBehaviour
 {
     [SerializeField] Sprite[] spriteArray;
     [SerializeField] float changeSpeed = .1f;
